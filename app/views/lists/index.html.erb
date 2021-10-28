@@ -1,1 +1,12 @@
-<h1>My Lists</h1>
+
+<div class="container">
+    <h1 class="mt-4">My Lists</h1>
+    <%= link_to 'Create a movie List', new_list_path, class: 'btn btn-outline-primary btn-md mb-4'%>
+    <div class="row d-flex justify-content-around">
+        <% @lists.each do |list|%>
+        <div class="card-category mb-4" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+            <%= link_to list.name,  list_bookmarks_path(list)%>
+        </div>
+        <% end %>
+    </div>
+</div>
