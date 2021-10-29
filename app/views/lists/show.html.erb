@@ -9,18 +9,19 @@
           class: 'btn btn-outline-danger btn-md mb-4' %>
       </div>
   </div>
+
       <div class="row d-flex justify-content-between py-5">
-        <% @list.movies.each do |movie|%>
+        <% @list.bookmarks.each do |bookmark|%>
          
           <div class="card-trip">
-            <img src="<%= movie.poster_url %>" />
+            <img src="<%= bookmark.movie.poster_url %>" />
               <div class="card-trip-infos">
                 <div>
-                  <h2 class="mb-"><%= movie.title%></h2>
-                  <p><%= movie.overview%></p>
+                  <h2 class="mb-2"><%= bookmark.movie.title%> <span class="rating-star"> <%= bookmark.movie.rating%> <i class="fas fa-star"></i></span></h2>
+                  <p><%= bookmark.movie.overview%></p>
                 </div>
-                <h2 class="card-trip-pricing"><%= movie.rating%></h2>
               </div>
+                <p class="card-body comment"> <span class="quote"><i class="fas fa-quote-left"></i></span> <%= bookmark.comment%> </p>
             </div>
         <% end %>
       </div>

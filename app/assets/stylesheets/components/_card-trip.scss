@@ -18,12 +18,29 @@
     margin: 0;
   }
   
-  .card-trip p {
+  .card-trip .card-trip-infos p {
     font-size: 12px;
     opacity: .7;
     margin: 0;
   }
+
+  .card-trip .quote  i {
+    font-size: 20px;
+    display: inline-block;
+  }
   
+  .card-trip .rating-star {
+    color: gray;
+    margin-left: 10px;
+  }
+
+  .card-trip .card-body > p {
+    font-size: 14px;
+  }
+
+  .card-trip .rating-star i{
+    color: gold;
+  }
   
   .card-trip .card-trip-infos {
     padding: 16px;
