@@ -1,10 +1,14 @@
 <div class="container py-5">
-    <h1 class="mt-4"><%= @list.name%></h1>
-    <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-outline-primary btn-md mb-4'%>
+  <div class="d-flex justify-content-between align-items-center">
+    <h1 class=""><%= @list.name%></h1>
+      <div class="my-buttons">
+        <%= link_to 'Add a movie', new_list_bookmark_path(@list), class: 'btn btn-outline-primary btn-md mb-4'%>
         <%= link_to 'Delete this list', list_path(@list), 
-        method: :delete, 
-        data: { confirm: 'Are you sure you want to perform this action?' },
-        class: 'btn btn-outline-danger btn-md mb-4' %>
+          method: :delete, 
+          data: { confirm: 'Are you sure you want to perform this action?' },
+          class: 'btn btn-outline-danger btn-md mb-4' %>
+      </div>
+  </div>
       <div class="row d-flex justify-content-between py-5">
         <% @list.movies.each do |movie|%>
          
@@ -12,7 +16,7 @@
             <img src="<%= movie.poster_url %>" />
               <div class="card-trip-infos">
                 <div>
-                  <h2><%= movie.title%></h2>
+                  <h2 class="mb-"><%= movie.title%></h2>
                   <p><%= movie.overview%></p>
                 </div>
                 <h2 class="card-trip-pricing"><%= movie.rating%></h2>
@@ -36,6 +40,7 @@
           <h2>Reviews</h2>
           <% @list.reviews.each do |review|%>
             <div class="notification">
+             <img src='https://kitt.lewagon.com/placeholder/users/chrisgeek07' class="avatar-large"/>
               <div class="notification-content">
                 <p>
                    <small>Rating: <% review.rating.times do %>
