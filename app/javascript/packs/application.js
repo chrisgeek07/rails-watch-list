@@ -19,7 +19,9 @@ require("channels")
 import 'bootstrap';
 
 import { initSelect2 } from '../channels/init_select2';
+import { loadDynamicBannerText } from '../channels/banner';
 
 document.addEventListener("turbolinks:load", function() {
   initSelect2();
+  loadDynamicBannerText();
 });
