@@ -37,7 +37,12 @@
           <% @list.reviews.each do |review|%>
             <div class="notification">
               <div class="notification-content">
-                <p><small>Rating: <%= review.rating %></small></p>
+                <p>
+                   <small>Rating: <% review.rating.times do %>
+                      <i class="fas fa-star"></i>
+                   <% end %>
+                   </small>
+                </p>
                 <p><%= review.comment %></p>
               </div>
 
