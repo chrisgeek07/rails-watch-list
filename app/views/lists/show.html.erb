@@ -22,16 +22,37 @@
 
     <div class="row">
       <div class="container mt-3">
-        <h1>Add bookmark</h1>
+        <h1>Add a bookmark</h1>
         <%= render "form-movies" %>
       </div>
     </div>
     <hr>
 
-    <div class="row">
-      <div class="container mt-3">
-        <h1>Add review</h1>
-        <%= render "form-reviews" %>
+    <div class="container mt-3">
+      <div class="row">
+
+          <div class="col-6">
+          <h2>Reviews</h2>
+          <% @list.reviews.each do |review|%>
+            <div class="notification">
+              <div class="notification-content">
+                <p><small>Rating: <%= review.rating %></small></p>
+                <p><%= review.comment %></p>
+              </div>
+
+              <div class="notification-actions">
+                <a href="#">Delete <i class="far fa-trash-alt"></i></a>
+              </div>
+              <hr>
+            </div>
+            <% end %>
+          </div>
+
+          <div class="col-6">
+            <h2>Add a review</h2>
+            <%= render "form-reviews" %>
+          </div>
+
       </div>
     </div>
 </div>
